@@ -47,9 +47,9 @@ def process_single(words):
     if word == "uuid":
         return generate_uuid()
     elif word == "coin":
-        return generate_coin("", 1)
+        return generate_coin(1)
     elif word == "dice":
-        return generate_dice("", 1)
+        return generate_dice(1)
     elif isinstance(word, int):
         return generate_randomint(0, word)
 
@@ -71,11 +71,11 @@ def process_double(words):
     elif words[0] == "coin" and words[1] >= 1:
         # Cap at 100
         words[1] = 100 if words[1] > 100 else words[1]
-        return generate_coin("", words[1])
+        return generate_coin(words[1])
     elif words[0] == "dice" and words[1] >= 1:
         # Cap at 100
         words[1] = 100 if words[1] > 100 else words[1]
-        return generate_dice("", words[1])
+        return generate_dice(words[1])
 
     return ""
 
@@ -93,16 +93,26 @@ def generate_uuid():
 
     return genuuid
 
-def generate_coin(gen_coin, coin):
-    if coin != 0: gen_coin = generate_coin(("Heads" if random.SystemRandom().randint(0, 1) == 1 else "Tails") + " " + gen_coin, coin - 1).strip()
+def generate_coin(coin):
+    gen_coin = generate_coin_recursive("", coin)
 
     slacklog.info("generate_coin", gen_coin)
 
     return gen_coin
 
-def generate_dice(gen_dice, dice):
-    if dice != 0: gen_dice = generate_dice(str(random.SystemRandom().randint(1, 6)) + " " + gen_dice, dice - 1).strip()
+def generate_coin_recursive(gen_coin, coin):
+    if coin == 0: return gen_coin
+
+    return generate_coin_recursive(("Heads" if random.SystemRandom().randint(0, 1) == 1 else "Tails") + " " + gen_coin, coin - 1).strip()
+
+def generate_dice(dice):
+    gen_dice = generate_dice_recursive("", dice)
 
     slacklog.info("generate_dice", gen_dice)
 
     return gen_dice
+
+def generate_dice_recursive(gen_dice, dice):
+    if dice == 0: return  gen_coin
+
+    return generate_dice_recursive(str(random.SystemRandom().randint(1, 6)) + " " + gen_dice, dice - 1).strip()
