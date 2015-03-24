@@ -19,7 +19,7 @@ def slackrandom(request):
     requestText = request.POST['text']
     systemRandom = random.SystemRandom()
 
-    responseData = systemRandom.randomint(0, 100)
+    responseData = systemRandom.randint(0, 100)
 
 
     return HttpResponse(responseData)
