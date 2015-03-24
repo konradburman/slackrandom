@@ -46,6 +46,8 @@ def process_single(words):
 
     if word == "uuid":
         return generate_uuid()
+    elif word == "coid":
+        return generate_coin()
     elif isinstance(word, int):
         return generate_randomint(0, word)
 
@@ -76,3 +78,10 @@ def generate_uuid():
     slacklog.info("generate_uuid", genuuid)
 
     return genuuid
+
+def generate_coin():
+    coin = "Heads" if random.SystemRandom().randint(0, 1) == 1 else "Tails"
+
+    slacklog.info("generate_coin", coin)
+
+    return coin
