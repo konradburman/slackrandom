@@ -7,4 +7,4 @@ r = redis.Redis(unix_socket_path=settings.REDIS_SOCK)
 
 def index(request):
     bytes_generated = r.get(settings.REDIS_BYTES_GENERATED)
-	return HttpResponse(bytes_generated)
+    return HttpResponse(bytes_generated)
