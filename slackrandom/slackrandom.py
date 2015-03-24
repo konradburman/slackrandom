@@ -39,6 +39,11 @@ def slackrandom(request):
 def process_single(words):
     word = words[0]
 
+    try:
+        word = int(word)
+    except Exception, e:
+        pass
+
     if word == "uuid":
         return generate_uuid()
     elif isinstance(word, int):
@@ -47,6 +52,12 @@ def process_single(words):
     return ""
 
 def process_double(words):
+    try:
+        words[0] = int(words[0])
+        words[1] = int(words[1])
+    except Exception, e:
+        pass
+
     if isinstance(words[0], int) and isinstance(words[1], int):
         return generate_randomint(words[0], words[1])
 
