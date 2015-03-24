@@ -24,7 +24,7 @@ def slackrandom(request):
 
     if requestText == "":
         responseData = generate_randomint(0, 100)
-    elif requestText == "uuid"
+    elif requestText == "uuid":
         responseData = generate_uuid()
 
     return HttpResponse(responseData)
