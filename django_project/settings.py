@@ -94,11 +94,21 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filename': os.path.join(BASE_DIR_LOGS, 'slackrandom.log'),
         },
+        'slackrandomerror': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR_LOGS, 'slackrandomerror.log'),
+        },
     },
     'loggers': {
         'slackrandom.info': {
             'handlers': ['file'],
             'level': 'INFO',
+            'propagate': True,
+        },
+        'slackrandom.error': {
+            'handlers': ['slackrandomerror'],
+            'level': 'ERROR',
             'propagate': True,
         },
     },

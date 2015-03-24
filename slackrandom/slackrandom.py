@@ -32,8 +32,7 @@ def slackrandom(request):
         elif len(requestWords) == 2:
             responseData = process_double(requestWords)
     except Exception, e:
-        print e
-        pass
+        slacklog.error("slackrandom", e)
 
     return HttpResponse(responseData)
 
