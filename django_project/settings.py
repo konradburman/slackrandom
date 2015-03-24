@@ -18,7 +18,7 @@ BASE_DIR_LOGS = os.path.join(BASE_DIR, 'logs')
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ['DJANGO_SECRET_KEY'] 
+SECRET_KEY = 12345#os.getenv('DJANGO_SECRET_KEY') 
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -55,7 +55,7 @@ WSGI_APPLICATION = 'django_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-DATABASES = {
+'''DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'django',
@@ -65,6 +65,7 @@ DATABASES = {
         'PORT': os.environ['DJANGO_DATABASE_PORT'],
     }
 }
+'''
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
