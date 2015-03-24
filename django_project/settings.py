@@ -104,4 +104,9 @@ LOGGING = {
     },
 }
 
-APPEND_SLASH=False
+APPEND_SLASH = False
+
+# Redis
+REDIS_ENABLED = True
+REDIS_SOCK = '/var/run/redis/redis.sock'
+REDIS_BYTES_GENERATED = 'BYTES_GENERATED'
