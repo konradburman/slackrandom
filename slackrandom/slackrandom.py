@@ -23,13 +23,22 @@ def slackrandom(request):
     requestText = request.POST['text']
 
     if requestText == "":
-        responseData = randomint(0, 100)
+        responseData = generate_randomint(0, 100)
+    elif requestText == "uuid"
+        responseData = generate_uuid()
 
     return HttpResponse(responseData)
 
-def randomint(min, max):
+def generate_randomint(min, max):
     integer = random.SystemRandom().randint(0, 100)
     
     logger.info(integer)
 
     return integer
+
+def generate_uuid():
+    genuuid = str(uuid.uuid4())
+
+    logger.info(genuuid)
+
+    return genuuid
