@@ -7,7 +7,7 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 
-logger = logging.getLogger('slackrandom.info')
+import slacklog
 
 @csrf_exempt
 def slackrandom(request):
@@ -32,13 +32,13 @@ def slackrandom(request):
 def generate_randomint(min, max):
     integer = random.SystemRandom().randint(0, 100)
     
-    logger.info(integer)
+    slacklog.info("generate_randomint", integer)
 
     return integer
 
 def generate_uuid():
     genuuid = str(uuid.uuid4())
 
-    logger.info(genuuid)
+    slacklog.info("generate_uuid", genuuid)
 
     return genuuid
