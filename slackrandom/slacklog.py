@@ -11,7 +11,5 @@ def info(source, message):
 
 def bytes_generated(message):
     if not settings.REDIS_ENABLED: return
-
-    message = message.replace(" ", "")
-
-    r.incrby(settings.REDIS_BYTES_GENERATED, len(message))
+    
+    r.incrby(settings.REDIS_BYTES_GENERATED, len(message.replace(" ", "")))
