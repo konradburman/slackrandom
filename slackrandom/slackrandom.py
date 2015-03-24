@@ -71,7 +71,7 @@ def process_double(words):
     elif words[0] == "coin" and words[1] >= 1:
         # Cap at 100
         words[1] = 100 if words[1] > 100 else words[1]
-        return generate_dice("", words[1])
+        return generate_coin("", words[1])
     elif words[0] == "dice" and words[1] >= 1:
         # Cap at 100
         words[1] = 100 if words[1] > 100 else words[1]
