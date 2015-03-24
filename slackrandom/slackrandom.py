@@ -69,6 +69,8 @@ def process_double(words):
     if isinstance(words[0], int) and isinstance(words[1], int):
         return generate_randomint(words[0], words[1])
     elif words[0] == "dice" and words[1] >= 1:
+        # Cap at 100
+        words[1] = 100 if words[1] > 100 else words[1]
         return generate_dice("", words[1])
 
     return ""
