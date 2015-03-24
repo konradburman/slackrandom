@@ -1,9 +1,13 @@
 import json
+import logging
 import random
+import uuid
 from datetime import datetime
 from django.http import HttpResponse, Http404
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
+
+logger = logging.getLogger(__name__)
 
 @csrf_exempt
 def slackrandom(request):
@@ -17,9 +21,15 @@ def slackrandom(request):
     requestUserName = request.POST['user_name']
     requestCommand = request.POST['command']
     requestText = request.POST['text']
-    systemRandom = random.SystemRandom()
 
-    responseData = systemRandom.randint(0, 100)
-
+    if requestText == "":
+        responseData = randomint(0, 100)
 
     return HttpResponse(responseData)
+
+def randomint(min, max):
+    integer = random.SystemRandom().randint(0, 100)
+    
+    logger.info(integer)
+
+    return integer
