@@ -58,6 +58,10 @@ def process_single(words):
 def process_double(words):
     try:
         words[0] = int(words[0])
+    except Exception, e:
+        pass
+
+    try:
         words[1] = int(words[1])
     except Exception, e:
         pass
