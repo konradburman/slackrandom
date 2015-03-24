@@ -1,5 +1,4 @@
 import json
-import redis
 from datetime import datetime
 from django.http import JsonResponse, Http404
 from django.shortcuts import redirect
