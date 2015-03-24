@@ -1,2 +1,4 @@
 *.DS_store
 *.py[code]
+*.sublime-*
+*.log
