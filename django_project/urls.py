@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from slackrandom import views
+from slackrandom import views, slackrandom
 #from django.contrib import admin
 #admin.autodiscover()
 
