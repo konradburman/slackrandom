@@ -16,4 +16,7 @@ def error(source, message):
 def bytes_generated(message):
     if not settings.REDIS_ENABLED: return
 
-    r.incrby(settings.REDIS_BYTES_GENERATED, len(message.replace(" ", "")))
+    pipe = r.pipeline()
+    pipe.incrby(settings.REDIS_BYTES_GENERATED, len(message.replace(" ", "")))
+    pipe.incrby(settings.REDIS_REQUEST_COUNT, 1)
+    pipe.execute()
