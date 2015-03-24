@@ -1,0 +1,685 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"st",
+				"strip"
+			],
+			[
+				"gen",
+				"generate_randomint"
+			],
+			[
+				"requ",
+				"requestWords"
+			],
+			[
+				"pro",
+				"process_single"
+			],
+			[
+				"random",
+				"randomint"
+			],
+			[
+				"jo",
+				"json_goal"
+			],
+			[
+				"jsonM",
+				"jsonMorningGrateful"
+			],
+			[
+				"ski",
+				"skipped_afternoon"
+			],
+			[
+				"se",
+				"serializers"
+			],
+			[
+				"cra",
+				"creator"
+			],
+			[
+				"Journal",
+				"JournalService"
+			],
+			[
+				"assert",
+				"assertIsNone"
+			],
+			[
+				"form",
+				"formValues"
+			],
+			[
+				"submi",
+				"submitPost"
+			],
+			[
+				"Bet",
+				"BetterService"
+			],
+			[
+				"Journ",
+				"JournalService"
+			],
+			[
+				"jou",
+				"journal"
+			],
+			[
+				"after",
+				"afternoonPost"
+			],
+			[
+				"ass",
+				"assertEqual"
+			],
+			[
+				"assertI",
+				"assertIsNotNone"
+			],
+			[
+				"is",
+				"isSkipping"
+			],
+			[
+				"test",
+				"testGoal"
+			],
+			[
+				"goa",
+				"goal"
+			],
+			[
+				"gra",
+				"grateful"
+			],
+			[
+				"Goal",
+				"GoalService"
+			],
+			[
+				"Mood",
+				"MoodService"
+			],
+			[
+				"Aff",
+				"AffirmationService"
+			],
+			[
+				"te",
+				"testMessage"
+			],
+			[
+				"journa",
+				"journalProperties"
+			],
+			[
+				"try",
+				"try	Try/Except"
+			],
+			[
+				"get",
+				"get_full_name"
+			],
+			[
+				"crea",
+				"creator"
+			],
+			[
+				"is_",
+				"is_deleted"
+			],
+			[
+				"proper",
+				"properties"
+			],
+			[
+				"Jou",
+				"JournalUserPreference"
+			],
+			[
+				"goal",
+				"goalOne"
+			],
+			[
+				"goalT",
+				"goalTwo"
+			],
+			[
+				"go",
+				"goalThree"
+			],
+			[
+				"gre",
+				"gratefulTwo"
+			],
+			[
+				"mo",
+				"models"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "slackrandom/views.py",
+			"settings":
+			{
+				"buffer_size": 125,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "slackrandom/slackrandom.py",
+			"settings":
+			{
+				"buffer_size": 2946,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "django_project/urls.py",
+			"settings":
+			{
+				"buffer_size": 458,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "slackrandom/slacklog.py",
+			"settings":
+			{
+				"buffer_size": 130,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 33.0,
+		"selected_items":
+		[
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"instl",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 408.0
+	},
+	"console":
+	{
+		"height": 114.0,
+		"history":
+		[
+			"sublime.log_commands(False)",
+			"sublime.log_commands(True)",
+			"sublime.log_commands(true)",
+			"import urllib.request,os,hashlib; h = '2deb499853c4371624f5a07e27c334aa' + 'bf8c4e67d14fb0525ba4f89698a6d7e1'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/D/Dropbox/Programming/slackrandom",
+		"/D/Dropbox/Programming/slackrandom/django_project",
+		"/D/Dropbox/Programming/slackrandom/slackrandom"
+	],
+	"file_history":
+	[
+		"/D/Dropbox/Programming/slackrandom/django_project/settings.py",
+		"/D/Dropbox/Programming/journal/.gitignore",
+		"/C/Users/Wesley/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Wesley/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/D/Chrome Downloads/zip/imm6010/AFINN/AFINN-README.txt",
+		"/D/Chrome Downloads/zip/imm6010/AFINN/AFINN-111.txt",
+		"/D/Chrome Downloads/zip/imm6010/AFINN/AFINN-96.txt",
+		"/D/Dropbox/Programming/journal/service/AffirmationService.py",
+		"/D/Dropbox/Programming/journal/service/GratefulService.py",
+		"/D/Dropbox/Programming/journal/urls.py",
+		"/D/Dropbox/Programming/journal/templates/journal/newPost.html",
+		"/D/Dropbox/Programming/journal/templates/journal/newPostAfternoon.html",
+		"/D/Dropbox/Programming/journal/templates/journal/newPostNight.html",
+		"/D/Dropbox/Programming/journal/service/PostService.py",
+		"/D/Dropbox/Programming/journal/service/JournalService.py",
+		"/D/Dropbox/Programming/journal/templates/journal/createNewUser.html",
+		"/D/Dropbox/Programming/journal/static/js/posts.js",
+		"/D/Dropbox/Programming/journal/models.py",
+		"/D/Dropbox/Programming/journal/views.py",
+		"/D/Dropbox/Programming/journal/users.py",
+		"/D/Dropbox/Programming/journal/service/GoalService.py",
+		"/D/Dropbox/Programming/journal/posts.py",
+		"/D/World of Warcraft/Logs/WoWCombatLog-split-2015-03-11T23-56-28.761Z.txt",
+		"/D/Dropbox/Programming/journal/tests/testpost.py",
+		"/D/Dropbox/Programming/journal/tests/testgoal.py",
+		"/D/Dropbox/Programming/journal/service/BetterService.py",
+		"/D/Dropbox/Programming/journal/tests/testbetter.py",
+		"/D/Dropbox/Programming/journal/__init__.py",
+		"/D/Dropbox/Programming/journal/tests/testaffirmation.py",
+		"/D/Dropbox/Programming/journal/tests/testgrateful.py",
+		"/D/Dropbox/Programming/journal/tests/testmood.py",
+		"/D/Dropbox/Programming/journal/service/MoodService.py",
+		"/C/Users/Wesley/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/D/Dropbox/Programming/journal/templates/journal/index.html",
+		"/D/Dropbox/Programming/journal/service/__init__.py",
+		"/D/Dropbox/Programming/journal/posts/PostsService.py",
+		"/D/Dropbox/Programming/journal/posts/GratefulService.py",
+		"/D/Dropbox/Programming/journal/tests.py",
+		"/D/Dropbox/Programming/journal/testpost.py",
+		"/D/Dropbox/Programming/journal/TestPost.py",
+		"/D/Dropbox/Programming/journal/postsService.py",
+		"/D/Dropbox/Programming/journal/static/css/bootstrap.css",
+		"/D/Dropbox/Programming/journal/static/css/bootstrap-theme.css",
+		"/D/Dropbox/Programming/journal/hashids.py",
+		"/C/Users/Wesley/AppData/Local/Temp/7zE89C7.tmp/hashids.py",
+		"/D/Dropbox/Programming/journal/verification.py",
+		"/D/Dropbox/Programming/journal/j.py",
+		"/D/Chrome Downloads/polls/views.py",
+		"/D/Chrome Downloads/polls/admin.py",
+		"/D/Chrome Downloads/polls/models.py",
+		"/D/Chrome Downloads/polls/tests.py",
+		"/D/Chrome Downloads/polls/urls.py",
+		"/D/Chrome Downloads/polls/templates/polls/results.html",
+		"/D/Dropbox/Programming/journal/admin.py",
+		"/D/Dropbox/Programming/journal/settings.py",
+		"/D/Chrome Downloads/polls/__init__.py",
+		"/D/Chrome Downloads/polls/templates/polls/detail.html",
+		"/D/Chrome Downloads/polls/templates/polls/index.html",
+		"/C/Users/Wesley/AppData/Roaming/Sublime Text 3/Packages/SideBarEnhancements/Default (Windows).sublime-keymap",
+		"/C/Users/Wesley/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap"
+	],
+	"find":
+	{
+		"height": 38.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"0",
+			"\\s+[=]\\s+",
+			"'",
+			"\\]",
+			".POST\\[",
+			".POST\\['",
+			"    print ",
+			"GratefulService",
+			"one",
+			"afternoon",
+			"(\\$)(\\d+)",
+			"Night",
+			"night",
+			"Night",
+			"afternoon",
+			"morning",
+			"PostService",
+			"SPELL_ENERGIZE",
+			"afternoonPost",
+			"morningPost",
+			"goals",
+			"self.testGoal,",
+			"testGoal",
+			"one",
+			"afternoon",
+			"afternoonPost",
+			"nightPost",
+			"afternoon",
+			"update_goals_success_dict",
+			"mood",
+			"morningPost",
+			"PostService",
+			"Affirmation",
+			"Puntr",
+			"Slice ",
+			"\n            ",
+			"LOGO",
+			"\n        ",
+			"nightPost",
+			"afternoonPost",
+			"morningPost",
+			"skipPost",
+			"NewPost",
+			"newPost",
+			"BooleanFiend",
+			"basestring",
+			"hashids",
+			"hashid",
+			"Greatful",
+			"	\n",
+			"{})",
+			"e",
+			"auto_now_add=true",
+			"__init__",
+			"ctrl+tab"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": true,
+		"regex": true,
+		"replace_history":
+		[
+			" = ",
+			"",
+			"better",
+			"goal",
+			"",
+			"S",
+			"night_post",
+			"afternoon_post",
+			"morning_post",
+			"skip_post",
+			"new_post",
+			"Grateful",
+			"auto_now_add = True"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "slackrandom/views.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 125,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								125
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "slackrandom/slackrandom.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2946,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								556,
+								556
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "django_project/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 458,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								458,
+								458
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "slackrandom/slacklog.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 130,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								130,
+								130
+							]
+						],
+						"settings":
+						{
+							"open_with_edit": true,
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 21.0
+	},
+	"input":
+	{
+		"height": 25.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 86.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "sr.sublime-project",
+	"replace":
+	{
+		"height": 72.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"urls",
+				"urls.py"
+			],
+			[
+				"vi",
+				"views.py"
+			],
+			[
+				"ur",
+				"urls.py"
+			],
+			[
+				"user",
+				"users.py"
+			],
+			[
+				"post",
+				"posts.py"
+			],
+			[
+				"new",
+				"templates\\journal\\newPostNight.html"
+			],
+			[
+				"mod",
+				"models.py"
+			],
+			[
+				"mo",
+				"models.py"
+			],
+			[
+				"admin",
+				"admin.py"
+			],
+			[
+				"detail",
+				"templates\\polls\\detail.html"
+			],
+			[
+				"det",
+				"templates\\polls\\detail.html"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 396.0,
+		"selected_items":
+		[
+		],
+		"width": 400.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
