@@ -63,8 +63,8 @@ def process_double(words):
 
     return ""
 
-def generate_randomint(min, max):
-    integer = random.SystemRandom().randint(0, 100)
+def generate_randomint(a, b):
+    integer = random.SystemRandom().randint(a, b)
     
     slacklog.info("generate_randomint", integer)
 
