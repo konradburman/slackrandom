@@ -47,7 +47,7 @@ def process_single(words):
     if word == "uuid":
         return generate_uuid()
     elif word == "coin":
-        return generate_coin()
+        return generate_coin("", 1)
     elif word == "dice":
         return generate_dice("", 1)
     elif isinstance(word, int):
@@ -68,6 +68,10 @@ def process_double(words):
 
     if isinstance(words[0], int) and isinstance(words[1], int):
         return generate_randomint(words[0], words[1])
+    elif words[0] == "coin" and words[1] >= 1:
+        # Cap at 100
+        words[1] = 100 if words[1] > 100 else words[1]
+        return generate_dice("", words[1])
     elif words[0] == "dice" and words[1] >= 1:
         # Cap at 100
         words[1] = 100 if words[1] > 100 else words[1]
@@ -89,15 +93,15 @@ def generate_uuid():
 
     return genuuid
 
-def generate_coin():
-    coin = "Heads" if random.SystemRandom().randint(0, 1) == 1 else "Tails"
+def generate_coin(gen_coin, coin):
+    if coin != 0: gen_coin = generate_coin(("Heads" if random.SystemRandom().randint(0, 1) == 1 else "Tails") + " " + gen_coin, coin - 1).strip()
 
-    slacklog.info("generate_coin", coin)
+    slacklog.info("generate_coin", gen_coin)
 
-    return coin
+    return gen_coin
 
 def generate_dice(gen_dice, dice):
-    if dice != 0 or dice == "": gen_dice = generate_dice(str(random.SystemRandom().randint(1, 6)) + " " + gen_dice, dice - 1).strip()
+    if dice != 0: gen_dice = generate_dice(str(random.SystemRandom().randint(1, 6)) + " " + gen_dice, dice - 1).strip()
 
     slacklog.info("generate_dice", gen_dice)
 
