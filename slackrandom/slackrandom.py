@@ -46,8 +46,10 @@ def process_single(words):
 
     if word == "uuid":
         return generate_uuid()
-    elif word == "coid":
+    elif word == "coin":
         return generate_coin()
+    elif word == "dice":
+        return generate_dice("", 1)
     elif isinstance(word, int):
         return generate_randomint(0, word)
 
@@ -62,6 +64,8 @@ def process_double(words):
 
     if isinstance(words[0], int) and isinstance(words[1], int):
         return generate_randomint(words[0], words[1])
+    elif words[0] == "dice" and words[1] >= 1:
+        return generate_dice("", words[1])
 
     return ""
 
@@ -85,3 +89,10 @@ def generate_coin():
     slacklog.info("generate_coin", coin)
 
     return coin
+
+def generate_dice(gen_dice, dice):
+    if dice != 0 or dice == "": gen_dice = generate_dice(str(random.SystemRandom().randint(1, 6)) + " " + gen_dice, dice - 1).strip()
+
+    slacklog.info("generate_dice", gen_dice)
+
+    return gen_dice
