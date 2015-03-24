@@ -7,7 +7,7 @@ from django.http import HttpResponse, Http404
 from django.shortcuts import redirect
 from django.views.decorators.csrf import csrf_exempt
 
-from slackrandom import slacklog
+import slackrandom.slacklog
 
 @csrf_exempt
 def slackrandom(request):
