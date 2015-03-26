@@ -113,6 +113,6 @@ def generate_dice(dice):
     return gen_dice
 
 def generate_dice_recursive(gen_dice, dice):
-    if dice == 0: return  gen_coin
+    if dice == 0: return gen_dice
 
     return generate_dice_recursive(str(random.SystemRandom().randint(1, 6)) + " " + gen_dice, dice - 1).strip()
