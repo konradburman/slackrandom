@@ -7,7 +7,8 @@ if settings.REDIS_ENABLED:
     r = redis.Redis(unix_socket_path=settings.REDIS_SOCK)
 
 log = logging.getLogger('slackrandom.info')
-log_error = logging.getLogger('slackrandomerror.error')
+log_error = logging.getLogger('slackrandom.error')
+log_data = logging.getLogger('slackrandom.request')
 
 def info(source, message):
     log.info(source + "\t" + str(message))
