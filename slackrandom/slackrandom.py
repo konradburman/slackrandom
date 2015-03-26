@@ -12,21 +12,22 @@ import slacklog
 @csrf_exempt
 def slackrandom(request):
     responseData = ""
+    statusCode = 200
 
     try:
         requestData = {}
-        
-        requestData['token'] = request.POST['token']
-        requestData['team_id'] = request.POST['team_id']
-        requestData['team_domain'] = request.POST['team_domain']
-        requestData['channel_id'] = request.POST['channel_id']
-        requestData['channel_name'] = request.POST['channel_name']
-        requestData['user_id'] = request.POST['user_id']
-        requestData['user_name'] = request.POST['user_name']
-        requestData['command'] = request.POST['command']
-        requestData['text'] = request.POST['text']
 
-        slacklog.log_request(requestData)
+        requestData['token'] = str(request.POST['token'])
+        requestData['team_id'] = str(request.POST['team_id'])
+        requestData['team_domain'] = str(request.POST['team_domain'])
+        requestData['channel_id'] = str(request.POST['channel_id'])
+        requestData['channel_name'] = str(request.POST['channel_name'])
+        requestData['user_id'] = str(request.POST['user_id'])
+        requestData['user_name'] = str(request.POST['user_name'])
+        requestData['command'] = str(request.POST['command'])
+        requestData['text'] = str(request.POST['text'])
+
+        slacklog.request(requestData)
 
         requestWords = requestData['text'].split()
 
@@ -37,9 +38,10 @@ def slackrandom(request):
         elif len(requestWords) == 2:
             responseData = process_double(requestWords)
     except Exception, e:
+        statusCode = 500
         slacklog.error("slackrandom", e)
 
-    return HttpResponse(responseData)
+    return HttpResponse(responseData, status = statusCode)
 
 def process_single(words):
     word = words[0].lower()

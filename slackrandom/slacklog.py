@@ -8,7 +8,7 @@ if settings.REDIS_ENABLED:
 
 log = logging.getLogger('slackrandom.info')
 log_error = logging.getLogger('slackrandom.error')
-log_data = logging.getLogger('slackrandom.request')
+log_request = logging.getLogger('slackrandom.request')
 
 def info(source, message):
     log.info(source + "\t" + str(message))
@@ -25,7 +25,7 @@ def bytes_generated(message):
     pipe.incrby(settings.REDIS_REQUEST_COUNT, 1)
     pipe.execute()
 
-def log_request(data):
-    if not date: return
+def request(data):
+    if not data: return
 
-    log_data.info(data)
+    log_request.info(data)
