@@ -105,3 +105,8 @@ Example:
 /random dice 10
 Slack Bot: 6 2 5 2 5 6 4 2 6 1
 ```
+
+## Stats
+```
+http://slackrandom.com/stats
+```
