@@ -1,33 +1,19 @@
-"""
-Django settings for django_project project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
-"""
-
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from ConfigParser import RawConfigParser
+
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 BASE_DIR_LOGS = os.path.join(BASE_DIR, 'logs')
 
+# Config
+config = RawConfigParser()
+config.read(os.path.join(BASE_DIR, 'settings.ini'))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
+SECRET_KEY = config.get('secrets', 'SECRET_KEY')
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 12345#os.getenv('DJANGO_SECRET_KEY') 
+DEBUG = False if config.get('environment', 'ENVIRONMENT') == "PRODUCTION" else True
+TEMPLATE_DEBUG = False if config.get('environment', 'ENVIRONMENT') == "PRODUCTION" else True
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-TEMPLATE_DEBUG = True
-
-ALLOWED_HOSTS = []
-
-# Application definition
+ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = (
     #'django.contrib.admin',
@@ -52,24 +38,19 @@ ROOT_URLCONF = 'django_project.urls'
 
 WSGI_APPLICATION = 'django_project.wsgi.application'
 
-
 # Database
-# https://docs.djangoproject.com/en/1.6/ref/settings/#databases
-'''DATABASES = {
+DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'django',
-        'USER': os.environ['DJANGO_DATABASE_USER'],
-        'PASSWORD': os.environ['DJANGO_DATABASE_PASSWORD'],
-        'HOST': os.environ['DJANGO_DATABASE_HOST'],
-        'PORT': os.environ['DJANGO_DATABASE_PORT'],
+        'ENGINE':config.get('database', 'DATABASE_ENGINE'),
+        'NAME': config.get('database', 'DATABASE_NAME'),
+        'USER': config.get('database', 'DATABASE_USER'),
+        'PASSWORD': config.get('database', 'DATABASE_PASSWORD'),
+        'HOST': config.get('database', 'DATABASE_HOST'),
+        'PORT': config.get('database', 'DATABASE_PORT'),
     }
 }
-'''
 
 # Internationalization
-# https://docs.djangoproject.com/en/1.6/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
@@ -82,10 +63,9 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.6/howto/static-files/
-
 STATIC_URL = '/static/'
 
+# Logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
