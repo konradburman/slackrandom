@@ -1,14 +1,26 @@
-import redis
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from django.http import JsonResponse
 from django.conf import settings
 
-r = redis.Redis(unix_socket_path=settings.REDIS_SOCK)
+# Import Redis if enabled
+if settings.REDIS_ENABLED: 
+    import redis
+    r = redis.Redis(unix_socket_path=settings.REDIS_SOCK)
+
+import slacklog
 
 def index(request):
-    bytes_generated = r.get(settings.REDIS_BYTES_GENERATED)
-    request_count = r.get(settings.REDIS_REQUEST_COUNT)
-    return render(request, 'slackrandom/index.html', {
-            'bytes_generated': bytes_generated,
-            'request_count': request_count
-        })
+    return redirect(settings.SLACKRANDOM_URL_GITHUB)
+    
+
+def stats(request):
+    responseData = {}
+    
+    if settings.REDIS_ENABLED: 
+        try:
+            responseData['bytesGenerated'] = r.get(settings.REDIS_BYTES_GENERATED)
+            responseData['requestCount'] = r.get(settings.REDIS_REQUEST_COUNT)
+        except Exception, e:
+            slacklog.error("stats", e)
+
+    return JsonResponse(responseData)

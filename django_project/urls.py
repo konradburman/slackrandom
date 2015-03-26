@@ -9,6 +9,7 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^$', views.index, name='index'),
+    url(r'^stats', views.stats, name='stats'),
     url(r'^random', slackrandom.slackrandom, name='slackrandom'),
     #url(r'^admin/', include(admin.site.urls)),
 )

@@ -14,16 +14,21 @@ def slackrandom(request):
     responseData = ""
 
     try:
-        requestToken = request.POST['token']
-        requestTeamId = request.POST['team_id']
-        requestTeamDomain = request.POST['team_domain']
-        requestChannelId = request.POST['channel_id']
-        requestChannelName = request.POST['channel_name']
-        requestUserId = request.POST['user_id']
-        requestUserName = request.POST['user_name']
-        requestCommand = request.POST['command']
-        requestText = request.POST['text']
-        requestWords = requestText.split()
+        requestData = {}
+        
+        requestData['token'] = request.POST['token']
+        requestData['team_id'] = request.POST['team_id']
+        requestData['team_domain'] = request.POST['team_domain']
+        requestData['channel_id'] = request.POST['channel_id']
+        requestData['channel_name'] = request.POST['channel_name']
+        requestData['user_id'] = request.POST['user_id']
+        requestData['user_name'] = request.POST['user_name']
+        requestData['command'] = request.POST['command']
+        requestData['text'] = request.POST['text']
+
+        slacklog.log_request(requestData)
+
+        requestWords = requestData['text'].split()
 
         if len(requestWords) == 0:
             responseData = generate_randomint(0, 100)
@@ -37,7 +42,7 @@ def slackrandom(request):
     return HttpResponse(responseData)
 
 def process_single(words):
-    word = words[0]
+    word = words[0].lower()
 
     try:
         word = int(word)
@@ -57,11 +62,13 @@ def process_single(words):
 
 def process_double(words):
     try:
+        words[0] = words[0].lower()
         words[0] = int(words[0])
     except Exception, e:
         pass
 
     try:
+        words[1] = words[1].lower()
         words[1] = int(words[1])
     except Exception, e:
         pass

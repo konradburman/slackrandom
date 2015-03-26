@@ -100,6 +100,11 @@ LOGGING = {
             'class': 'logging.FileHandler',
             'filename': os.path.join(BASE_DIR_LOGS, 'slackrandomerror.log'),
         },
+        'slackrandomrequest': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR_LOGS, 'slackrandomrequest.log'),
+        },
     },
     'loggers': {
         'slackrandom.info': {
@@ -112,6 +117,11 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+        'slackrandom.request': {
+            'handlers': ['slackrandomrequest'],
+            'level': 'INFO',
+            'propagate': True,
+        },
     },
 }
 
@@ -122,3 +132,8 @@ REDIS_ENABLED = True
 REDIS_SOCK = '/var/run/redis/redis.sock'
 REDIS_BYTES_GENERATED = 'BYTES_GENERATED'
 REDIS_REQUEST_COUNT = 'REQUEST_COUNT'
+
+# SlackRandom urls
+SLACKRANDOM_URL_HOME = 'http://slackrandom.com'
+SLACKRANDOM_URL_API_RANDOM = SLACKRANDOM_URL_HOME + '/random'
+SLACKRANDOM_URL_GITHUB = 'https://github.com/strattonw/slackrandom'
