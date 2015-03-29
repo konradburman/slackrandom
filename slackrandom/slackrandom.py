@@ -9,6 +9,8 @@ from django.views.decorators.csrf import csrf_exempt
 
 import slacklog
 
+random255 = lambda: random.randint(0,255)
+
 @csrf_exempt
 def slackrandom(request):
     responseData = ""
@@ -57,6 +59,8 @@ def process_single(words):
         return generate_coin(1)
     elif word == "dice":
         return generate_dice(1)
+    elif word == "color" or word == "colour"
+        return generate_colour()
     elif isinstance(word, int):
         return generate_randomint(0, word)
 
@@ -125,3 +129,10 @@ def generate_dice_recursive(gen_dice, dice):
     if dice == 0: return gen_dice
 
     return generate_dice_recursive(str(random.SystemRandom().randint(1, 6)) + " " + gen_dice, dice - 1).strip()
+
+def generate_colour():
+    gen_colour = '#{:02x}{:02x}{:02x}'.format(random255(), random255(), random255())
+
+    slacklog.info("generate_colour", gen_colour)
+
+    return gen_colour
