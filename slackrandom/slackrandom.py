@@ -39,6 +39,8 @@ def slackrandom(request):
             responseData = process_single(requestWords)
         elif len(requestWords) == 2:
             responseData = process_double(requestWords)
+        elif len(requestWords) == 3:
+            responseData = process_triple(requestWords)
     except Exception, e:
         statusCode = 500
         slacklog.error("slackrandom", e)
@@ -59,7 +61,7 @@ def process_single(words):
         return generate_coin(1)
     elif word == "dice":
         return generate_dice(1)
-    elif word == "color" or word == "colour"
+    elif word == "color" or word == "colour":
         return generate_colour()
     elif isinstance(word, int):
         return generate_randomint(0, word)
@@ -89,6 +91,35 @@ def process_double(words):
         # Cap at 100
         words[1] = 100 if words[1] > 100 else words[1]
         return generate_dice(words[1])
+    elif words[0] == "byte":
+        if words[1] == "hex":
+            return generate_byte_hex(1)
+
+    return ""
+
+def process_triple(words):
+    try:
+        words[0] = words[0].lower()
+        words[0] = int(words[0])
+    except Exception, e:
+        pass
+
+    try:
+        words[1] = words[1].lower()
+        words[1] = int(words[1])
+    except Exception, e:
+        pass
+
+    try:
+        words[2] = words[2].lower()
+        words[2] = int(words[2])
+        words[2] = 10000 if words[2] > 10000 else words[2]
+    except Exception, e:
+        pass
+
+    if words[0] == "byte":
+        if words[1] == "hex":
+            return generate_byte_hex(words[2])
 
     return ""
 
@@ -136,3 +167,13 @@ def generate_colour():
     slacklog.info("generate_colour", gen_colour)
 
     return gen_colour
+
+def generate_byte_hex(hex):
+    gen_hex = ""
+
+    for i in xrange(hex):
+        gen_hex = '{:s}{:02x} '.format(gen_hex, random255())
+
+    slacklog.info("generate_byte_hex", gen_hex)
+
+    return gen_hex
