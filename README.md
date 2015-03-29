@@ -105,6 +105,38 @@ Example:
 /random dice 10
 Slack Bot: 6 2 5 2 5 6 4 2 6 1
 ```
+---
+#### Colour
+Hex Colour
+```
+/random [colour || color]
+```
+Example:
+```
+/random colour
+Slack Bot: #e0fb01
+```
+---
+#### Bytes
+Hex byte
+```
+/random byte hex
+```
+Example:
+```
+/random byte hex
+Slack Bot: 3b
+```
+---
+N Hex bytes where 1 <= N <= 10000
+```
+/random byte hex N
+```
+Example:
+```
+/random byte hex 10
+Slack Bot: e3 7b 54 97 10 89 99 e8 22 5c
+```
 
 ## Stats
 ```
