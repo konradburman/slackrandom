@@ -9,7 +9,7 @@ from django.views.decorators.csrf import csrf_exempt
 
 import slacklog
 
-random255 = lambda: random.randint(0,255)
+random255 = lambda: random.SystemRandom().randint(0,255)
 
 @csrf_exempt
 def slackrandom(request):
