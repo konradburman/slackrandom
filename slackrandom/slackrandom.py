@@ -83,17 +83,17 @@ def process_double(words):
 
     if isinstance(words[0], int) and isinstance(words[1], int):
         return generate_randomint(words[0], words[1])
-    elif words[0] == "coin" and words[1] >= 1:
-        # Cap at 100
-        words[1] = 100 if words[1] > 100 else words[1]
-        return generate_coin(words[1])
-    elif words[0] == "dice" and words[1] >= 1:
-        # Cap at 100
-        words[1] = 100 if words[1] > 100 else words[1]
-        return generate_dice(words[1])
+    elif words[0] == "coin":
+        return generate_coin(cap_integer(words[1], 0, 100))
+    elif words[0] == "dice":
+        return generate_dice(cap_integer(words[1], 0, 100))
     elif words[0] == "byte":
         if words[1] == "hex":
             return generate_byte_hex(1)
+        elif words[1] == "octal":
+            return generate_byte_octal(1)
+        elif words[1] == "binary":
+            return generate_byte_binary(1)
 
     return ""
 
@@ -111,15 +111,17 @@ def process_triple(words):
         pass
 
     try:
-        words[2] = words[2].lower()
-        words[2] = int(words[2])
-        words[2] = 10000 if words[2] > 10000 else words[2]
+        words[2] = cap_integer(int(words[2].lower()), 0, 10000)
     except Exception, e:
         pass
 
     if words[0] == "byte":
         if words[1] == "hex":
             return generate_byte_hex(words[2])
+        elif words[1] == "octal":
+            return generate_byte_octal(words[2])
+        elif words[1] == "binary":
+            return generate_byte_binary(words[2])
 
     return ""
 
@@ -197,3 +199,9 @@ def generate_byte_binary(binary):
     slacklog.info("generate_byte_binary", gen_binary)
 
     return gen_binary
+
+def cap_integer(value, lower, upper):
+    value = upper if value > upper else value
+    value = lower if value < lower else value
+
+    return value

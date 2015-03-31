@@ -137,6 +137,47 @@ Example:
 /random byte hex 10
 Slack Bot: e3 7b 54 97 10 89 99 e8 22 5c
 ```
+---
+Octal byte
+```
+/random byte octal
+```
+Example:
+```
+/random byte octal
+Slack Bot: 007
+```
+---
+N Octal bytes where 1 <= N <= 10000
+```
+/random byte octal N
+```
+Example:
+```
+/random byte octal 10
+Slack Bot: 016 270 113 107 175 252 363 165 315 244
+```
+---
+Binary byte
+```
+/random byte binary
+```
+Example:
+```
+/random byte binary
+Slack Bot: 01100001
+```
+---
+N Binary bytes where 1 <= N <= 10000
+```
+/random byte binary N
+```
+Example:
+```
+/random byte binary 10
+Slack Bot: 11101001 00111001 10111010 10111000 11100100 00011110 01101100 00111010 
+11101111 01100110
+```
 
 ## Stats
 ```
