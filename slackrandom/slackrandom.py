@@ -177,3 +177,23 @@ def generate_byte_hex(hex):
     slacklog.info("generate_byte_hex", gen_hex)
 
     return gen_hex
+
+def generate_byte_octal(octal):
+    gen_oct = ""
+
+    for i in xrange(octal):
+        gen_oct = '{:s}{:03o} '.format(gen_oct, random255())
+
+    slacklog.info("generate_byte_octal", gen_oct)
+
+    return gen_octal
+
+def generate_byte_binary(binary):
+    gen_binary = ""
+
+    for i in xrange(binary):
+        gen_binary = '{:s}{:08b} '.format(gen_binary, random255())
+
+    slacklog.info("generate_byte_binary", gen_binary)
+
+    return gen_binary
