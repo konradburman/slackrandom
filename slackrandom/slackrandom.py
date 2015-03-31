@@ -181,12 +181,12 @@ def generate_byte_hex(hex):
     return gen_hex
 
 def generate_byte_octal(octal):
-    gen_oct = ""
+    gen_octal = ""
 
     for i in xrange(octal):
-        gen_oct = '{:s}{:03o} '.format(gen_oct, random255())
+        gen_octal = '{:s}{:03o} '.format(gen_octal, random255())
 
-    slacklog.info("generate_byte_octal", gen_oct)
+    slacklog.info("generate_byte_octal", gen_octal)
 
     return gen_octal
 
