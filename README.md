@@ -6,7 +6,7 @@
 1. Goto Account -> Integrations
 2. Search and select 'Slash Commands'
 3. Enter the command that you would like to use (recommend /random)
-4. URL enter 'http://slackrandom.com/random'
+4. URL enter 'YOUR_HOST/random'
 5. Method 'POST'
 6. Fill out Autocomplete help text (optional)
 6. A. Description 'Generates random values'
@@ -181,5 +181,5 @@ Slack Bot: 11101001 00111001 10111010 10111000 11100100 00011110 01101100 001110
 
 ## Stats
 ```
-http://slackrandom.com/stats
+YOUR_HOST/stats
 ```
